@@ -5,3 +5,5 @@ class => <br>
 - Driver
 - Rider
 - Ride
+- Ride_Request
+- Ride_Matching

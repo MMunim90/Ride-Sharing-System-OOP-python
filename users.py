@@ -49,4 +49,4 @@ class Driver(User):
         print(f"Driver Name: {self.name}, Driver Email: {self.email}")
 
     def accept_ride(self, ride):
-        pass
+        ride.set_driver(self)
