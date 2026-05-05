@@ -31,3 +31,9 @@ class Rider(User):
 
     def update_location(self, current_location):
         self.current_location = current_location
+
+    def request_ride(self, ride_sharing, destination):
+        pass
+
+    def show_current_ride(self):
+        print(self.current_ride)
