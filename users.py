@@ -48,4 +48,5 @@ class Driver(User):
     def display_profile(self):
         print(f"Driver Name: {self.name}, Driver Email: {self.email}")
 
-    
+    def accept_ride(self, ride):
+        pass
