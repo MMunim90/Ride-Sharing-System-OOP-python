@@ -28,3 +28,6 @@ class Rider(User):
             self.wallet += amount
         else:
             print("Amount less than 0")
+
+    def update_location(self, current_location):
+        self.current_location = current_location
