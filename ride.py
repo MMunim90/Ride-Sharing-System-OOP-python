@@ -1,6 +1,22 @@
 from datetime import datetime
 from time import sleep
 
+class Ride_Sharing:
+    def __init__(self, company_name):
+        self.company_name = company_name
+        self.riders = [] # rider database
+        self.drivers = [] # drivers database
+        self.rides = [] # rides database
+
+    def add_rider(self, rider):
+        self.riders.append(rider)
+
+    def add_driver(self, driver):
+        self.drivers.append(driver)
+
+    def __str__(self):
+        return f"Company Name: {self.company_name} with Riders: {len(self.riders)} and Drivers: {len(self.drivers)}"
+
 class Ride:
     def __init__(self, start_location, end_location):
         self.start_location = start_location
