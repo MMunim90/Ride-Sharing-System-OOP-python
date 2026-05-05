@@ -7,3 +7,6 @@ class => <br>
 - Ride
 - Ride_Request
 - Ride_Matching
+- Vehicle
+- Car
+- Bike
