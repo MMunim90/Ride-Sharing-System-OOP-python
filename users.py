@@ -22,3 +22,9 @@ class Rider(User):
 
     def display_profile(self):
         print(f"Rider : {self.name} and email {self.email}")
+
+    def load_cash(self, amount):
+        if amount > 0:
+            self.wallet += amount
+        else:
+            print("Amount less than 0")
