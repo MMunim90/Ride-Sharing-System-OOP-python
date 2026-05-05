@@ -17,3 +17,8 @@ class Ride:
 
     def end_ride(self):
         self.end_time = datetime.now()
+        self.rider.wallet -= self.estimated_fare
+        self.driver.wallet += self.estimated_fare
+
+    def __repr__(self):
+        return f"Ride details: Strarted From: {self.start_location} To: {self.end_location}. Start At: {self.start_time}, End At: {self.end_time}. Total Paid: {self.estimated_fare}"
