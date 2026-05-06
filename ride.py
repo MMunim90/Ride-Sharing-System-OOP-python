@@ -1,6 +1,7 @@
 from datetime import datetime
 from time import sleep
 from vehicle import Car, Bike
+import random
 
 class Ride_Sharing:
     def __init__(self, company_name):
@@ -26,7 +27,7 @@ class Ride:
         self.rider = None
         self.start_time = None
         self.end_time = None
-        self.estimated_fare = None
+        self.estimated_fare = self.calculate_fare(vehicle.vehicle_type)
         self.vehicle = vehicle
 
     def set_driver(self, driver):
@@ -39,6 +40,18 @@ class Ride:
         self.end_time = datetime.now()
         self.rider.wallet -= self.estimated_fare
         self.driver.wallet += self.estimated_fare
+
+    def calculate_fare(self, vehicle):
+        print(vehicle)
+        distance = random.randint(1, 1000)
+        fare_per_km = {
+            'car' : 30,
+            'bike' : 20,
+            'cng' : 25
+        }
+        return distance*fare_per_km.get(vehicle)
+
+
 
     def __repr__(self):
         return f"Ride details: Strarted From: {self.start_location} To: {self.end_location}. Start At: {self.start_time}, End At: {self.end_time}. Total Paid: {self.estimated_fare}"
@@ -56,14 +69,14 @@ class Ride_Matching:
     def find_driver(self, ride_request, vehicle_type):
         if len(self.available_drivers) > 0:
             print("Looking for drivers.....")
-            sleep(5)
+            sleep(random.randint(1, 15))
             driver = self.available_drivers[0]
             if vehicle_type == 'car':
                 vehicle = Car('car', 'ABC23423', 120)
             elif vehicle_type == 'bike':
-                vehicle = Bike('Motor Bike', 'WERW3423', 180)
+                vehicle = Bike('bike', 'WERW3423', 180)
 
             ride = Ride(ride_request.rider.current_location, ride_request.end_location, vehicle)
-            
+
             driver.accept_ride(ride)
             return ride
