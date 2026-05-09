@@ -6,7 +6,7 @@ import random
 class Ride_Sharing:
     def __init__(self, company_name):
         self.company_name = company_name
-        self.riders = [] # rider database
+        self.riders = [] # riders database
         self.drivers = [] # drivers database
         self.rides = [] # rides database
 
